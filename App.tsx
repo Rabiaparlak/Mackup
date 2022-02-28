@@ -19,7 +19,7 @@ export default function App() {
    //   <StatusBar style="auto" />
     //</View>
   //);
-  return(<View/>);
+  return(0);
 }
 
 const styles = StyleSheet.create({
