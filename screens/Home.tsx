@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, TouchableOpacity, Text, Image, TextInput, ScrollView } from "react-native";
 import { styles } from "./style";
-import { Ionicons, FontAwesome } from '@expo/vector-icons';
+import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 /* product name, product description, star, image */
 /*
@@ -39,7 +39,6 @@ const Home = () => {
   const navigation: any = useNavigation();
 
   return (
-
     <View style={styles.body}>
       {/* telefonun durum çubuğunu kaldırmak için  */}
       <StatusBar hidden />
@@ -47,10 +46,23 @@ const Home = () => {
       <View style={styles.header}>
         <View style={styles.headerTitleArea}>
           <Text style={styles.headerTitle}>Hello Daria.</Text>
-          <Ionicons style={styles.headerIcon} name="md-menu-outline" size={40} color={"white"} />
-          <View style={styles.profileArea}>
-            <Image source={require('./img/pp.jpg')} style={styles.profile} />
-          </View>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Profile")
+            }}
+          >
+            <Ionicons style={styles.headerIcon} name="md-menu-outline" size={40} color={"white"} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate("Profile")
+            }}
+          >
+            <View style={styles.profileArea}>
+              <Image source={require('./img/pp.jpg')} style={styles.profile} />
+            </View>
+          </TouchableOpacity>
+
         </View>
         <View style={styles.searchArea}>
           <Ionicons style={styles.searchIcon} name="search-outline" size={27} color={"white"} />
@@ -62,10 +74,22 @@ const Home = () => {
       {/* Container kısmı  */}
       {/* part 1 */}
       <View style={styles.container}>
+      <View style={styles.localArea}>
+        <MaterialIcons name="location-on" size={20} color={"white"} />
+      </View>
         <ScrollView
           showsVerticalScrollIndicator={false}
         >
-          <Text style={styles.title}>Popular in Warsaw</Text>
+          <View style={styles.titleArea}>
+            <Text style={styles.title}>Popular in Warsaw</Text>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate("Profile")
+              }}
+            >
+              <Text style={styles.more}>More</Text>
+            </TouchableOpacity>
+          </View>
           <ScrollView
             horizontal
             // Bunu göstermiyoruz ekranda.
@@ -84,7 +108,14 @@ const Home = () => {
                     key={index}
                     style={styles.product}
                   >
-                    <Image source={item.image} style={styles.productPhoto} />
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.navigate("Profile")
+                      }}
+                    >
+                      <Image source={item.image} style={styles.productPhoto} />
+                    </TouchableOpacity>
+
                     <Text style={styles.productName}>{item.product_name}</Text>
                     <Text style={styles.productDescription}>{item.desc}</Text>
                     <View style={styles.description}>
@@ -97,37 +128,45 @@ const Home = () => {
             }
           </ScrollView>
           {/* part2 */}
-          <Text style={styles.title}>Popular in Warsaw</Text>
-          <ScrollView
-            horizontal
-            // Bunu göstermiyoruz ekranda.
-            showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
-          >
-            {
-              data.map((item, index) => {
-                /*
-                Bu şekilde öğrendiklerini de not alarak şey yaparasan daha akılda kalıcı olabilir bebeğim.
-                  FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
-                  MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
-                  FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
-                */
-                return (
-                  <View
-                    key={index}
-                    style={styles.product}
-                  >
-                    <Image source={item.image} style={styles.productPhoto} />
-                    <Text style={styles.productName}>{item.product_name}</Text>
-                    <Text style={styles.productDescription}>{item.desc}</Text>
-                    <View style={styles.description}>
-                      <FontAwesome name="star" size={16} color={"#75D1DD"} />
-                      <Text style={styles.starText}>{item.star}/5</Text>
+          <View>
+            <Text style={styles.title}>Popular in Warsaw</Text>
+            <ScrollView
+              horizontal
+              // Bunu göstermiyoruz ekranda.
+              showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
+            >
+              {
+                data.map((item, index) => {
+                  /*
+                  Bu şekilde öğrendiklerini de not alarak şey yaparasan daha akılda kalıcı olabilir bebeğim.
+                    FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
+                    MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
+                    FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
+                  */
+                  return (
+                    <View
+                      key={index}
+                      style={styles.product}
+                    >
+                      <TouchableOpacity
+                        onPress={() => {
+                          navigation.navigate("Profile")
+                        }}
+                      >
+                        <Image source={item.image} style={styles.productPhoto} />
+                      </TouchableOpacity>
+                      <Text style={styles.productName}>{item.product_name}</Text>
+                      <Text style={styles.productDescription}>{item.desc}</Text>
+                      <View style={styles.description}>
+                        <FontAwesome name="star" size={16} color={"#75D1DD"} />
+                        <Text style={styles.starText}>{item.star}/5</Text>
+                      </View>
                     </View>
-                  </View>
-                )
-              })
-            }
-          </ScrollView>
+                  )
+                })
+              }
+            </ScrollView>
+          </View>
           {/* part3 */}
           <Text style={styles.title}>Popular in Warsaw</Text>
           <ScrollView
@@ -148,7 +187,13 @@ const Home = () => {
                     key={index}
                     style={styles.product}
                   >
-                    <Image source={item.image} style={styles.productPhoto} />
+                    <TouchableOpacity
+                      onPress={() => {
+                        navigation.navigate("Profile")
+                      }}
+                    >
+                      <Image source={item.image} style={styles.productPhoto} />
+                    </TouchableOpacity>
                     <Text style={styles.productName}>{item.product_name}</Text>
                     <Text style={styles.productDescription}>{item.desc}</Text>
                     <View style={styles.description}>
