@@ -64,18 +64,16 @@ searchText:{
 },
 container:{ 
   width:windowWidth,
-  height:windowHeight*0.81,
+  marginTop:hp('25%'),
   paddingLeft:wp('2%')
 },
 title:{
   fontSize:wp('7%'),
   color:'#59585F',
   textAlign:'left',
-  marginTop:hp('3%'),
+  marginTop:hp('2%'),
   marginLeft:wp('8%')
 },
-
-products:{flexDirection:"row"},
 
 product:{marginLeft:wp('8%')},
 productPhoto:{
@@ -91,7 +89,8 @@ productName:{
 },
 description:{
   flexDirection:"row",
-  marginTop:hp('2.2%')
+  marginTop:hp('2.2%'),
+  marginBottom:hp('4%'),
 },
 productDescription:{
   color:'#C0C0C2',
