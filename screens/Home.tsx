@@ -1,9 +1,15 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View, TouchableOpacity, Text, Image, TextInput, ScrollView } from "react-native";
-import { styles } from "./style";
+import { View, TouchableOpacity, Text, Image, TextInput, ScrollView,StyleSheet,Dimensions } from "react-native";
 import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp
+} from 'react-native-responsive-screen';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 /* product name, product description, star, image */
 /*
 Burada data adında bir adet dizi oluşturdum. map, filter, find vs. metodlar arraylar için oluşturulmuştur.
@@ -75,7 +81,7 @@ const Home = () => {
       {/* part 1 */}
       <View style={styles.container}>
       <View style={styles.localArea}>
-        <MaterialIcons name="location-on" size={20} color={"white"} />
+        <MaterialIcons  name="location-on" size={20} color={"white"} />
       </View>
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -90,6 +96,7 @@ const Home = () => {
               <Text style={styles.more}>More</Text>
             </TouchableOpacity>
           </View>
+
           <ScrollView
             horizontal
             // Bunu göstermiyoruz ekranda.
@@ -98,7 +105,6 @@ const Home = () => {
             {
               data.map((item, index) => {
                 /*
-                Bu şekilde öğrendiklerini de not alarak şey yaparasan daha akılda kalıcı olabilir bebeğim.
                   FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
                   MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
                   FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
@@ -127,6 +133,7 @@ const Home = () => {
               })
             }
           </ScrollView>
+          
           {/* part2 */}
           <View>
             <Text style={styles.title}>Popular in Warsaw</Text>
@@ -210,4 +217,144 @@ const Home = () => {
     </View>
   )
 }
+
+ const styles = StyleSheet.create({
+
+  body: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+
+  },
+  header: {
+    borderBottomLeftRadius: 25,
+    position: 'absolute',
+    top: 0,
+    backgroundColor: '#7A78D4',
+    width: windowWidth,
+    height: windowHeight * 0.25,
+    padding: hp('5%'),
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 3,
+  },
+  headerTitleArea: {
+    flexDirection: "row",
+    marginTop: hp('2%')
+  },
+  headerTitle: {
+    fontSize: wp('9%'),
+    color: 'white',
+  },
+  headerIcon: {
+    marginLeft: wp('16%')
+  },
+  profileArea: {
+    width: wp('12%'),
+    height: hp('6%'),
+    backgroundColor: 'white',
+    borderRadius: 19,
+    marginLeft: wp('4%')
+  },
+  profile: {
+    width: wp('12%'),
+    height: hp('6%'),
+    borderRadius: 19
+  },
+  searchArea: {
+    flexDirection: "row",
+    height: hp('7%'),
+    backgroundColor: 'rgba(255, 255, 255, 0.20)',
+    marginTop: wp('5%'),
+    borderRadius: 18
+  },
+  searchIcon: {
+    paddingTop: hp('1.5%'),
+    paddingLeft: wp('3%')
+  },
+  searchText: {
+    textAlign: 'left',
+    paddingLeft: wp('3%'),
+    color: '#fff'
+  },
+  container: {
+    width: windowWidth,
+    marginTop: hp('25%'),
+    paddingLeft: wp('2%'),
+
+  },
+  title: {
+    fontSize: wp('7%'),
+    color: '#59585F',
+    textAlign: 'left',
+    marginTop: hp('2%'),
+    marginLeft: wp('8%')
+  },
+
+  product: { marginLeft: wp('8%')},
+  productPhoto: {
+    width: windowWidth * 0.5,
+    height: windowHeight * 0.2,
+    marginTop: hp('3%'),
+    borderRadius: 20
+  },
+  productName: {
+    color: '#59585F',
+    fontSize: wp('5%'),
+    marginTop: hp('2%')
+  },
+  description: {
+    flexDirection: "row",
+    marginTop: hp('2.2%'),
+    marginBottom: hp('4%'),
+  },
+  productDescription: {
+    color: '#C0C0C2',
+    marginTop: hp('1%')
+  },
+  starText: {
+    color: '#59585F',
+    marginLeft: wp('1%')
+  },
+  titleArea: {
+    flexDirection: "row"
+  },
+  more: {
+    position: 'absolute',
+    marginLeft: wp('30%'),
+    marginTop: hp('3%'),
+    color: '#7A78D4',
+    fontFamily: 'sans-serif-medium'
+  },
+  localArea: {
+    height: windowHeight * 0.060,
+    width: windowWidth * 0.12,
+    backgroundColor: '#7A78D4',
+    borderRadius: 17,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: wp('80%'),
+    marginBottom: hp('-76.5%'),
+    zIndex: 1,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 3,
+  },
+  part2View: {
+    zIndex: 0
+  }
+
+})
+
+
 export default Home;
