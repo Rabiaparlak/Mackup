@@ -31,7 +31,10 @@ export const styles = StyleSheet.create({
 
   },
   images: {
-    
+    marginTop:windowHeight*0.05,
+    width:windowWidth*0.8,
+    height:windowHeight*0.4,
+    borderRadius:20
   },
   text: {
 
@@ -72,4 +75,5 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     margin: windowWidth*0.015
   },
+
 })
