@@ -65,7 +65,7 @@ const Home = () => {
             }}
           >
             <View style={styles.profileArea}>
-              <Image source={require('./img/pp.jpg')} style={styles.profile} />
+              <Image source={require('../assets/examples/pp.jpg')} style={styles.profile} />
             </View>
           </TouchableOpacity>
 
