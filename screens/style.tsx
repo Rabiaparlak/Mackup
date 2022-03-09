@@ -23,7 +23,7 @@ name:{
    
    marginTop:windowHeight*0.03,
   fontSize:windowWidth*0.1,
-  color:'#C8C7DC'
+  color:'#ECEAEA'
 },
 profilPhoto:{
   width:windowWidth*0.26,
@@ -33,6 +33,36 @@ profilPhoto:{
 backIcon:{
   marginLeft:windowWidth*0.85,
   marginTop:windowHeight*-0.14,
+},
+container:{
+  alignItems:'center',
+  paddingTop:windowHeight*0.1,
+},
+card:{ 
+  width: windowWidth * 0.9, 
+  height: windowHeight * 0.07, 
+  backgroundColor: '#F4F1F1',
+  marginBottom:windowHeight*0.02,
+  borderRadius:20 ,
+  justifyContent:'flex-start',
+  alignItems:'center',
+  flexDirection:'row',
+  shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 2,
+},
+cardIcon:{ 
+  marginLeft: windowWidth * 0.02 
+},
+cardText:{ 
+  fontSize: windowWidth * 0.06, 
+  color: '#B2AFAF', 
+  marginLeft: windowWidth * 0.25 
 },
 
 })
