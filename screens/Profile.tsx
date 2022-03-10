@@ -12,11 +12,11 @@ const Profile = () => {
         <View style={styles.container}>
 
             <View style={styles.header}>
-                <Text style={styles.profileText}>Profile</Text>
+                {/* <Text style={styles.profileText}>Profile</Text> */}
             </View>
-            {/* öne çıkan div */}
+            {/* featured div */}
             <View style={styles.card}>
-                {/* Foto yuklenmediğinde veya kullanıcı foto koymak istemediğinde alttaki View görünecek */}
+                {/* When the photo is not uploaded or the user does not want to put a photo, the View below will appear. */}
                 <View style={styles.profileView}>
                     <Image source={require('../assets/examples/pp.jpg')} style={styles.profilePhoto} />
                 </View>
@@ -24,10 +24,6 @@ const Profile = () => {
                 <Fontisto name="player-settings" size={25} color={"#454545"} style={styles.settingIcon} />
                 <Text style={styles.nameText}>Daria Eichler</Text>
 
-                <ScrollView
-                    showsVerticalScrollIndicator={false}
-                >
-
                     <TouchableOpacity>
                         <View style={styles.line}>
                             <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
@@ -39,7 +35,7 @@ const Profile = () => {
                     <TouchableOpacity>
                         <View style={styles.line}>
                             <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample1</Text>
+                            <Text style={styles.settingName}>Sample2</Text>
                             <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
                         </View>
                     </TouchableOpacity>
@@ -47,7 +43,7 @@ const Profile = () => {
                     <TouchableOpacity>
                         <View style={styles.line}>
                             <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample1</Text>
+                            <Text style={styles.settingName}>Sample3</Text>
                             <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
                         </View>
                     </TouchableOpacity>
@@ -55,47 +51,29 @@ const Profile = () => {
                     <TouchableOpacity>
                         <View style={styles.line}>
                             <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample1</Text>
+                            <Text style={styles.settingName}>Sample4</Text>
                             <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
                         </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={styles.line}>
-                            <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample1</Text>
-                            <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
-                        </View>
-                    </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={styles.line}>
-                            <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample1</Text>
-                            <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
-                        </View>
-                    </TouchableOpacity>
-
-                </ScrollView>
 
             </View>
-            {/* geri ve kaydet butonlarının oldugu kısım */}
+            {/* back and save buttons */}
             <View style={styles.down}>
-
                 <TouchableOpacity
                     onPress={() => {
                         navigation.navigate("Home")
                     }}
                 >
-                    {/* geri butonu ve iconu */}
+                    {/* back button and icon */}
                     <View style={styles.backArea}>
                         <MaterialIcons name="keyboard-backspace" size={30} color={"#333333"} />
                     </View>
-
                 </TouchableOpacity>
 
                 <TouchableOpacity>
-                    {/* kaydet butonu ve yazısı */}
+                    {/* save button and text */}
                     <View style={styles.saveArea}>
                         <Text style={{ color: 'white', fontSize: windowWidth * 0.05 }}>SAVE</Text>
                     </View>
@@ -174,11 +152,11 @@ const styles = StyleSheet.create({
         fontSize: windowWidth * 0.09,
         color: '#414141',
         marginTop: windowHeight * 0.03,
-        marginBottom: windowHeight * 0.03,
+        marginBottom: windowHeight * 0.05,
     },
     line: {
         width: windowWidth * 0.9,
-        height: windowHeight * 0.09,
+        height: windowHeight * 0.07,
         borderTopWidth: 0.5,
         borderColor: '#D1D1D1',
         justifyContent: 'center',
@@ -222,7 +200,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#3B5EFF',
+        backgroundColor: '#7A78D4',
         marginLeft: windowWidth * 0.1,
     },
 

@@ -61,7 +61,7 @@ const Introduction = () => {
             <View style={styles.container}>
                 <TouchableOpacity
                     onPress={() => {
-                        navigation.navigate("Home")
+                        navigation.navigate("Login")
                     }}>
                     <Text style={styles.skip}>Skip</Text>
                 </TouchableOpacity>
@@ -110,7 +110,7 @@ const Introduction = () => {
                     <TouchableOpacity
                         onPress={() => {
                             if (index == data.length - 1){
-                                navigation.navigate("Home");
+                                navigation.navigate("Login");
                                 setIndex(0);
                             }
                             else

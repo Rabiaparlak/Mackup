@@ -3,10 +3,7 @@ import React from "react";
 import { View, TouchableOpacity, Text, Image, TextInput, ScrollView,StyleSheet,Dimensions } from "react-native";
 import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp
-} from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -339,16 +336,16 @@ const Home = () => {
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: wp('80%'),
-    marginBottom: hp('-76.5%'),
+    marginBottom: hp('-70%'),
     zIndex: 1,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.50,
     shadowRadius: 3.84,
-    elevation: 3,
+    elevation: 19,
   },
   part2View: {
     zIndex: 0
