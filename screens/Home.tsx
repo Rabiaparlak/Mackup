@@ -75,11 +75,12 @@ const Home = () => {
       </View>
 
       {/* Container kısmı  */}
-      {/* part 1 */}
       <View style={styles.container}>
+        {/* konum iconu */}
       <View style={styles.localArea}>
         <MaterialIcons  name="location-on" size={20} color={"white"} />
       </View>
+      {/* part 1 */}
         <ScrollView
           showsVerticalScrollIndicator={false}
         >
@@ -113,7 +114,7 @@ const Home = () => {
                   >
                     <TouchableOpacity
                       onPress={() => {
-                        navigation.navigate("Profile")
+                        navigation.navigate("Detail")
                       }}
                     >
                       <Image source={item.image} style={styles.productPhoto} />

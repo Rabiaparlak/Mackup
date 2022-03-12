@@ -28,7 +28,7 @@ const Login = () => {
                 <View style={styles.userNameView}>
                     <AntDesign name="user" size={15} color='gray' />
                     <Text style={{ marginLeft: 12 }}>User Name</Text>
-                    <TextInput placeholder="MehmetAliYilgin" placeholderTextColor="#D2CDEF" style={styles.input}></TextInput>
+                    <TextInput placeholder="RabiaParlak" placeholderTextColor="#D2CDEF" style={styles.input}></TextInput>
                 </View>
                 {/* Password */}
                 <View style={styles.userNameView}>
