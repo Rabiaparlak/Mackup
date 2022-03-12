@@ -155,7 +155,7 @@ const Home = () => {
                     >
                       <TouchableOpacity
                         onPress={() => {
-                          navigation.navigate("Profile")
+                          navigation.navigate("Detail")
                         }}
                       >
                         <Image source={item.image} style={styles.productPhoto} />
@@ -194,7 +194,7 @@ const Home = () => {
                   >
                     <TouchableOpacity
                       onPress={() => {
-                        navigation.navigate("Profile")
+                        navigation.navigate("Detail")
                       }}
                     >
                       <Image source={item.image} style={styles.productPhoto} />
@@ -323,8 +323,7 @@ const Home = () => {
     flexDirection: "row"
   },
   more: {
-    position: 'absolute',
-    marginLeft: wp('30%'),
+    marginLeft: wp('25%'),
     marginTop: hp('3%'),
     color: '#7A78D4',
     fontFamily: 'sans-serif-medium'
