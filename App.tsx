@@ -1,8 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Navigation from './navigation';
-
+import React from "react";
+import { useFonts } from 'expo-font';
 export default function App() {
+
+  const [loaded] = useFonts({
+    SyneMono: require('./assets/fonts/SyneMono.ttf'),
+  });
+
+  if (!loaded) {
+    return <></>;
+  }
+
   return (
     <View style={styles.container}>
       <Navigation />

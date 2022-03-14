@@ -24,37 +24,37 @@ const Profile = () => {
                 <Fontisto name="player-settings" size={25} color={"#454545"} style={styles.settingIcon} />
                 <Text style={styles.nameText}>Daria Eichler</Text>
 
-                    <TouchableOpacity>
-                        <View style={styles.line}>
-                            <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample1</Text>
-                            <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
-                        </View>
-                    </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.line}>
+                        <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
+                        <Text style={styles.settingName}>Sample1</Text>
+                        <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
+                    </View>
+                </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={styles.line}>
-                            <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample2</Text>
-                            <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
-                        </View>
-                    </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.line}>
+                        <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
+                        <Text style={styles.settingName}>Sample2</Text>
+                        <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
+                    </View>
+                </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={styles.line}>
-                            <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample3</Text>
-                            <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
-                        </View>
-                    </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.line}>
+                        <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
+                        <Text style={styles.settingName}>Sample3</Text>
+                        <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
+                    </View>
+                </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={styles.line}>
-                            <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
-                            <Text style={styles.settingName}>Sample4</Text>
-                            <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
-                        </View>
-                    </TouchableOpacity>
+                <TouchableOpacity>
+                    <View style={styles.line}>
+                        <MaterialCommunityIcons name="account-edit" size={30} color={"#727272"} style={styles.icon} />
+                        <Text style={styles.settingName}>Sample4</Text>
+                        <EvilIcons name="chevron-right" size={50} color={"#D2D2D2"} style={styles.nextIcon} />
+                    </View>
+                </TouchableOpacity>
 
 
 
@@ -62,14 +62,13 @@ const Profile = () => {
             {/* back and save buttons */}
             <View style={styles.down}>
                 <TouchableOpacity
+                    style={styles.backArea}
                     onPress={() => {
                         navigation.navigate("Home")
                     }}
                 >
                     {/* back button and icon */}
-                    <View style={styles.backArea}>
                         <MaterialIcons name="keyboard-backspace" size={30} color={"#333333"} />
-                    </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity>

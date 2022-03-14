@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     
     },
     text: {
-  
+        fontFamily:"SyneMono",
       color: 'white',
       fontSize: 40,
       textAlign: 'center',

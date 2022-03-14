@@ -9,6 +9,19 @@ const windowHeight = Dimensions.get('window').height;
 
 const Login = () => {
     const navigation: any = useNavigation();
+    const [index, setIndex] = React.useState(1);
+    const [userName, setUserName] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [passwordAgain, setPasswordAgain] = React.useState("");
+
+    const emptyValues = () => {
+        setEmail("");
+        setUserName("");
+        setPassword("");
+        setPasswordAgain("");
+    }
+
     return (
         <View>
             <StatusBar hidden />
@@ -19,33 +32,139 @@ const Login = () => {
 
             {/* login and registration part */}
             <View style={{ flexDirection: 'row' }}>
-                <Text style={styles.loginText}>Login</Text>
-                <Text style={styles.registerText}>Register</Text>
+                <TouchableOpacity onPress={() => {
+                    setIndex(1);
+                    emptyValues();
+
+                }}>
+                    <Text style={[styles.loginText, { color: index == 1 ? 'black' : 'gray' }]}>Login</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    setIndex(2);
+                    emptyValues();
+                }}>
+                    <Text style={[styles.registerText, { color: index == 2 ? 'black' : 'gray' }]}>Register</Text>
+                </TouchableOpacity>
             </View>
             {/* the part where the inputs are taken */}
             <View style={styles.container}>
                 {/* UserName */}
-                <View style={styles.userNameView}>
-                    <AntDesign name="user" size={15} color='gray' />
-                    <Text style={{ marginLeft: 12 }}>User Name</Text>
-                    <TextInput placeholder="RabiaParlak" placeholderTextColor="#D2CDEF" style={styles.input}></TextInput>
-                </View>
-                {/* Password */}
-                <View style={styles.userNameView}>
-                    <SimpleLineIcons name="lock" size={15} color='gray' />
-                    <Text style={{ marginLeft: 12 }}>Password</Text>
-                    <TextInput placeholder="**********" placeholderTextColor="#D2CDEF" style={styles.input}></TextInput>
-                </View>
-                {/* Redirect to home page with login button */}
-                <TouchableOpacity
-                    onPress={() => {
-                        navigation.navigate("Home")
-                    }}
-                >
-                    <View style={styles.loginButton}>
-                        <Text style={styles.login}>Login</Text>
-                    </View>
-                </TouchableOpacity>
+
+                {
+                    index == 1 ?
+                        <>
+                            <View style={styles.userNameView}>
+                                <AntDesign name="user" size={15} color='gray' />
+                                <Text style={{ marginLeft: 12 }}>User Name</Text>
+                                <TextInput
+                                    value={userName}
+                                    placeholder="your user name"
+                                    placeholderTextColor="#D2CDEF"
+                                    style={styles.input}
+                                    onChangeText={(text) => {
+                                        setUserName(text)
+                                    }}
+                                />
+                            </View>
+                            {/* Password */}
+                            <View style={styles.userNameView}>
+                                <SimpleLineIcons name="lock" size={15} color='gray' />
+                                <Text style={{ marginLeft: 12 }}>Password</Text>
+                                <TextInput
+                                    value={password}
+                                    secureTextEntry
+                                    placeholder="**********"
+                                    placeholderTextColor="#D2CDEF"
+                                    style={styles.input}
+                                    onChangeText={(text) => {
+                                        setPassword(text)
+                                    }}
+                                />
+                            </View>
+                            {/* Redirect to home page with login button */}
+                            <TouchableOpacity
+                                onPress={() => {
+                                    navigation.navigate("MyDrawer")
+                                    emptyValues();
+                                }}
+                            >
+                                <View style={styles.loginButton}>
+                                    <Text style={styles.login}>Login</Text>
+                                </View>
+                            </TouchableOpacity>
+                        </>
+                        :
+                        <>
+                            <View style={styles.userNameView}>
+                                <AntDesign name="user" size={15} color='gray' />
+                                <Text style={{ marginLeft: 12 }}>User Name</Text>
+                                <TextInput
+                                    value={userName}
+                                    placeholder="your user name"
+                                    placeholderTextColor="#D2CDEF"
+                                    style={styles.input}
+                                    onChangeText={(text) => {
+                                        setUserName(text)
+                                    }}
+                                />
+                            </View>
+                            <View style={styles.userNameView}>
+                                <AntDesign name="user" size={15} color='gray' />
+                                <Text style={{ marginLeft: 12 }}>E-mail</Text>
+                                <TextInput
+                                    value={email}
+                                    placeholder="@..."
+                                    placeholderTextColor="#D2CDEF"
+                                    style={styles.input}
+                                    onChangeText={(text) => {
+                                        setEmail(text)
+                                    }}
+                                />
+                            </View>
+                            <View style={styles.userNameView}>
+                                <AntDesign name="user" size={15} color='gray' />
+                                <Text style={{ marginLeft: 12 }}>Password</Text>
+                                <TextInput
+                                    value={password}
+                                    placeholder="**********"
+                                    placeholderTextColor="#D2CDEF"
+                                    style={styles.input}
+                                    onChangeText={(text) => {
+                                        setPassword(text)
+                                    }}
+                                />
+                            </View>
+                            {/* Password */}
+                            <View style={styles.userNameView}>
+                                <SimpleLineIcons name="lock" size={15} color='gray' />
+                                <Text style={{ marginLeft: 12 }}>Password Again</Text>
+                                <TextInput
+                                    secureTextEntry
+                                    value={passwordAgain}
+                                    placeholder="**********"
+                                    placeholderTextColor="#D2CDEF"
+                                    style={styles.input}
+                                    onChangeText={(text) => {
+                                        setPasswordAgain(text)
+                                    }}
+                                />
+                            </View>
+                            {/* Redirect to home page with login button */}
+                            <TouchableOpacity
+                                onPress={() => {
+                                    setIndex(1)
+                                    emptyValues();
+                                }}
+                            >
+                                <View style={styles.loginButton}>
+                                    <Text style={styles.login}>Register</Text>
+                                </View>
+                            </TouchableOpacity>
+                        </>
+                }
+
+
+
             </View>
 
 
@@ -101,13 +220,11 @@ const styles = StyleSheet.create({
     },
     loginText: {
         marginLeft: windowWidth * 0.1,
-        fontSize: windowWidth * 0.045,
-        color: 'black'
+        fontSize: windowWidth * 0.045
     },
     registerText: {
         marginLeft: windowWidth * 0.05,
-        fontSize: windowWidth * 0.045,
-        color: 'gray'
+        fontSize: windowWidth * 0.045
     },
     userNameView: {
         width: windowWidth * 0.8,

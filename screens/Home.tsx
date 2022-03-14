@@ -36,7 +36,9 @@ const data = [
   }
 ]
 
-const Home = () => {
+const Home = (props:any) => {
+
+  console.log(props)
 
 
   const navigation: any = useNavigation();
@@ -51,7 +53,8 @@ const Home = () => {
           <Text style={styles.headerTitle}>Hello Daria.</Text>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate("Profile")
+              
+              props.navigation.openDrawer();
             }}
           >
             <Ionicons style={styles.headerIcon} name="md-menu-outline" size={40} color={"white"} />

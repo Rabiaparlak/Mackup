@@ -1,22 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View, TouchableOpacity, Text, Image, TextInput, ScrollView, StyleSheet, Dimensions, ImageBackground } from "react-native";
+import { View, TouchableOpacity, Text, Image, ScrollView, StyleSheet, Dimensions, ImageBackground } from "react-native";
 import { Entypo, AntDesign, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-import { StatusBar } from 'expo-status-bar';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-import {
-  useFonts,
-  Inter_100Thin,
-  Inter_200ExtraLight,
-  Inter_300Light,
-  Inter_400Regular,
-  Inter_500Medium,
-  Inter_600SemiBold,
-  Inter_700Bold,
-  Inter_800ExtraBold,
-  Inter_900Black,
-} from '@expo-google-fonts/inter';
-import AppLoading from 'expo-app-loading';
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -35,27 +20,21 @@ const data = [
 const Detail = () => {
 
   const navigation: any = useNavigation();
-  let [fontsLoaded] = useFonts({
-    Inter_100Thin,
-    Inter_200ExtraLight,
-    Inter_300Light,
-    Inter_400Regular,
-    Inter_500Medium,
-    Inter_600SemiBold,
-    Inter_700Bold,
-    Inter_800ExtraBold,
-    Inter_900Black,
-
-  });
-  if (!fontsLoaded) {
-    return (<></>);
-  }
+  const [like, setLike] = React.useState(false);
 
 
   return (
     <View style={styles.body}>
-      <Entypo name="align-left" size={30}  color={'#4C4C6D'} style={styles.left}/>
-      <AntDesign name="shoppingcart" color={'#4C4C6D'} size={20} style={styles.shoppingIcon} />
+      <TouchableOpacity 
+      onPress={()=>{
+        navigation.navigate("Home")
+      }}
+      style={{zIndex:2,position:'absolute',left:windowWidth * 0.05,top:30}}>
+        <Entypo name="align-left" size={30} color={'#4C4C6D'}/>
+      </TouchableOpacity>
+      <TouchableOpacity style={{zIndex:2,position:'absolute',right:windowWidth * 0.05,top:30}}>
+      <AntDesign name="shoppingcart" color={'#4C4C6D'} size={20}  />
+      </TouchableOpacity>
       {/* resizeMode fotoğrafın boyutunun oranını korumasını sağlar */}
       <ImageBackground source={require('../assets/examples/kofte.png')} resizeMode="contain" style={styles.kofte}>
         <ScrollView
@@ -83,12 +62,14 @@ const Detail = () => {
           <View style={styles.detailViewZ}>
             {/* like için buton */}
             <TouchableOpacity
-            onPress={()=>{
-            }}
+              onPress={() => {
+                setLike(!like)
+              }}
+              style={styles.likeButton}
             >
-            <View style={styles.likeButton}>
-            <MaterialCommunityIcons name="heart-multiple-outline" size={25} color={'white'}/>
-            </View>
+
+              <MaterialCommunityIcons name={like ? "heart-multiple" : "heart-multiple-outline"} size={25} color={'white'} />
+
             </TouchableOpacity>
             {/* div içideki başlık , detay fiyat ekle butonu olan kısımlar */}
             <Text style={styles.title}>Product Detail</Text>
@@ -125,18 +106,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#9898D9',
     alignItems: 'center',
   },
-  left:{ 
+  left: {
     marginLeft: windowWidth * -0.85,
     marginTop: windowHeight * 0.05
   },
   shoppingIcon: {
     marginRight: windowWidth * -0.85,
-    marginTop:windowHeight*-0.04,
+    marginTop: windowHeight * -0.04,
   },
   kofte: {
     width: windowWidth,
     height: windowHeight * 0.5,
-    marginTop: windowHeight * -0.085
+    marginTop: windowHeight * -0.01
   },
   product: {
     width: windowWidth,
@@ -159,7 +140,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
   },
   detailViewZ: {
-    position: 'absolute',
+    // position: 'absolute',
     width: windowWidth * 0.9,
     height: windowHeight * 0.36,
     padding: windowWidth * 0.08,
@@ -175,15 +156,15 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 19,
   },
-  likeButton:{
-    width:windowWidth*0.14,
-    height:windowHeight*0.07,
-    backgroundColor:'#9898D9',
-    borderRadius:50,
-    marginTop:windowHeight*-0.07,
-    marginLeft:windowWidth*0.5,
-    justifyContent:'center',
-    alignItems:'center'
+  likeButton: {
+    width: windowWidth * 0.14,
+    height: windowHeight * 0.07,
+    backgroundColor: '#9898D9',
+    borderRadius: 50,
+    marginTop: windowHeight * -0.07,
+    marginLeft: windowWidth * 0.5,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   title: {
     fontSize: windowWidth * 0.05,
@@ -192,7 +173,6 @@ const styles = StyleSheet.create({
   productName: {
     marginTop: windowWidth * 0.05,
     fontSize: windowWidth * 0.07,
-    fontFamily: 'Inter_500Medium',
     color: '#000000',
   },
   productDescription: {
@@ -206,7 +186,6 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: windowWidth * 0.065,
-    fontFamily: 'Inter_700Bold',
     color: '#000000',
   },
   addButton: {
@@ -230,7 +209,6 @@ const styles = StyleSheet.create({
   },
   addText: {
     fontSize: windowWidth * 0.045,
-    fontFamily: 'Inter_600SemiBold'
   },
   addIcon: {
     marginLeft: windowWidth * 0.04,
