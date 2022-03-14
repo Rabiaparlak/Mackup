@@ -11,7 +11,18 @@ function MyDrawer(props: NavigationDrawerAction) {
             drawerContent={() => {
                 return <DrawerContent />
             }}
-            screenOptions={{ headerShown: false }}
+            screenOptions={{
+                headerShown: false,
+                drawerStyle: {
+                    marginTop:100,
+                    backgroundColor: '#312F53',
+                    borderTopRightRadius:400,
+                    borderBottomRightRadius:400,
+                    width: 300,
+                    height:600,
+                    opacity:0.5,
+                },
+            }}
         >
             <Drawer.Screen {...props} name="Home" component={Home} />
         </Drawer.Navigator>

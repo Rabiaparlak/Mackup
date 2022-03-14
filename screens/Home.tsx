@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View, TouchableOpacity, Text, Image, TextInput, ScrollView,StyleSheet,Dimensions } from "react-native";
+import { View, TouchableOpacity, Text, Image, TextInput, ScrollView, StyleSheet, Dimensions } from "react-native";
 import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -36,7 +36,7 @@ const data = [
   }
 ]
 
-const Home = (props:any) => {
+const Home = (props: any) => {
 
   // console.log(props)
 
@@ -53,7 +53,7 @@ const Home = (props:any) => {
           <Text style={styles.headerTitle}>Hello Daria.</Text>
           <TouchableOpacity
             onPress={() => {
-              
+
               props.navigation.openDrawer();
             }}
           >
@@ -80,10 +80,10 @@ const Home = (props:any) => {
       {/* Container kısmı  */}
       <View style={styles.container}>
         {/* konum iconu */}
-      <View style={styles.localArea}>
-        <MaterialIcons  name="location-on" size={20} color={"white"} />
-      </View>
-      {/* part 1 */}
+        <View style={styles.localArea}>
+          <MaterialIcons name="location-on" size={20} color={"white"} />
+        </View>
+        {/* part 1 */}
         <ScrollView
           showsVerticalScrollIndicator={false}
         >
@@ -134,7 +134,7 @@ const Home = (props:any) => {
               })
             }
           </ScrollView>
-          
+
           {/* part2 */}
           <View>
             <Text style={styles.title}>Popular in Warsaw</Text>
@@ -219,7 +219,7 @@ const Home = (props:any) => {
   )
 }
 
- const styles = StyleSheet.create({
+const styles = StyleSheet.create({
 
   body: {
     flex: 1,
@@ -249,7 +249,7 @@ const Home = (props:any) => {
     marginTop: hp('2%')
   },
   headerTitle: {
-    fontFamily:'NotoItalic',
+    fontFamily: 'NotoItalic',
     fontSize: wp('9%'),
     color: 'white',
   },
@@ -298,7 +298,7 @@ const Home = (props:any) => {
     marginLeft: wp('8%')
   },
 
-  product: { marginLeft: wp('8%')},
+  product: { marginLeft: wp('8%') },
   productPhoto: {
     width: windowWidth * 0.5,
     height: windowHeight * 0.2,
