@@ -148,7 +148,8 @@ const styles = StyleSheet.create({
         marginTop: windowHeight * -0.05
     },
     nameText: {
-        fontSize: windowWidth * 0.09,
+        fontSize: windowWidth * 0.08,
+        fontFamily:'NotoItalic',
         color: '#414141',
         marginTop: windowHeight * 0.03,
         marginBottom: windowHeight * 0.05,

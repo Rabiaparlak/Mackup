@@ -7,6 +7,10 @@ export default function App() {
 
   const [loaded] = useFonts({
     SyneMono: require('./assets/fonts/SyneMono.ttf'),
+    SansitaSwashed:require('./assets/fonts/SansitaSwashed.ttf'),
+    LeagueSpartan:require('./assets/fonts/LeagueSpartan.ttf'),
+    NotoItalic:require('./assets/fonts/NotoItalic.ttf'),
+    // NotoVeriable:require('./assets/fonts/NotoVariable.ttf'),
   });
 
   if (!loaded) {

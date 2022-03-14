@@ -38,7 +38,7 @@ const data = [
 
 const Home = (props:any) => {
 
-  console.log(props)
+  // console.log(props)
 
 
   const navigation: any = useNavigation();
@@ -249,6 +249,7 @@ const Home = (props:any) => {
     marginTop: hp('2%')
   },
   headerTitle: {
+    fontFamily:'NotoItalic',
     fontSize: wp('9%'),
     color: 'white',
   },
