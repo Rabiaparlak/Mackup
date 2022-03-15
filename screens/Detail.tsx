@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
     borderRadius: 40,
   },
   detailViewZ: {
-    // position: 'absolute',
     width: windowWidth * 0.9,
     height: windowHeight * 0.36,
     padding: windowWidth * 0.08,
@@ -168,11 +167,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: windowWidth * 0.05,
-    color: '#000000'
+    color: '#454545'
   },
   productName: {
     marginTop: windowWidth * 0.05,
     fontSize: windowWidth * 0.07,
+    fontFamily:'NotoItalic',
     color: '#000000',
   },
   productDescription: {
@@ -186,6 +186,7 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: windowWidth * 0.065,
+    fontFamily:'NotoItalic',
     color: '#000000',
   },
   addButton: {
@@ -193,7 +194,6 @@ const styles = StyleSheet.create({
     width: windowWidth * 0.4,
     height: windowHeight * 0.055,
     paddingLeft: windowWidth * 0.06,
-    // justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
     borderRadius: 20,
@@ -214,14 +214,5 @@ const styles = StyleSheet.create({
     marginLeft: windowWidth * 0.04,
   }
 })
-// Inter_100Thin,
-// Inter_200ExtraLight,
-// Inter_300Light,
-// Inter_400Regular,
-// Inter_500Medium,
-// Inter_600SemiBold,
-// Inter_700Bold,
-// Inter_800ExtraBold,
-// Inter_900Black,
 
 export default Detail;

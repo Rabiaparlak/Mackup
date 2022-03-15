@@ -35,7 +35,6 @@ const Login = () => {
                 <TouchableOpacity onPress={() => {
                     setIndex(1);
                     emptyValues();
-
                 }}>
                     <Text style={[styles.loginText, { color: index == 1 ? 'black' : 'gray' }]}>Login</Text>
                 </TouchableOpacity>
@@ -53,34 +52,36 @@ const Login = () => {
                 {
                     index == 1 ?
                         <>
-                            <View style={styles.userNameView}>
-                                <AntDesign name="user" size={15} color='gray' />
-                                <Text style={{ marginLeft: 12 }}>User Name</Text>
-                                <TextInput
-                                    value={userName}
-                                    placeholder="your user name"
-                                    placeholderTextColor="#D2CDEF"
-                                    style={styles.input}
-                                    onChangeText={(text) => {
-                                        setUserName(text)
-                                    }}
-                                />
-                            </View>
-                            {/* Password */}
-                            <View style={styles.userNameView}>
-                                <SimpleLineIcons name="lock" size={15} color='gray' />
-                                <Text style={{ marginLeft: 12 }}>Password</Text>
-                                <TextInput
-                                    value={password}
-                                    secureTextEntry
-                                    placeholder="**********"
-                                    placeholderTextColor="#D2CDEF"
-                                    style={styles.input}
-                                    onChangeText={(text) => {
-                                        setPassword(text)
-                                    }}
-                                />
-                            </View>
+                            <ScrollView showsVerticalScrollIndicator={false}>
+                                <View style={styles.userNameView}>
+                                    <AntDesign name="user" size={15} color='gray' />
+                                    <Text style={{ marginLeft: 12 }}>User Name</Text>
+                                    <TextInput
+                                        value={userName}
+                                        placeholder="your user name"
+                                        placeholderTextColor="#D2CDEF"
+                                        style={styles.input}
+                                        onChangeText={(text) => {
+                                            setUserName(text)
+                                        }}
+                                    />
+                                </View>
+                                {/* Password */}
+                                <View style={styles.userNameView}>
+                                    <SimpleLineIcons name="lock" size={15} color='gray' />
+                                    <Text style={{ marginLeft: 12 }}>Password</Text>
+                                    <TextInput
+                                        value={password}
+                                        secureTextEntry
+                                        placeholder="**********"
+                                        placeholderTextColor="#D2CDEF"
+                                        style={styles.input}
+                                        onChangeText={(text) => {
+                                            setPassword(text)
+                                        }}
+                                    />
+                                </View>
+                            </ScrollView>
                             {/* Redirect to home page with login button */}
                             <TouchableOpacity
                                 onPress={() => {
@@ -163,20 +164,12 @@ const Login = () => {
                                 </View>
                             </TouchableOpacity>
                         </>
-
                 }
-
-
-
             </View>
-
-
-
             {/* round bottom left */}
             <View style={styles.roundThree}></View>
             {/* the small one on the left */}
             <View style={styles.roundFour}></View>
-
 
         </View>
     )

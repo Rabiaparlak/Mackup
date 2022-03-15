@@ -225,7 +225,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
-
   },
   header: {
     borderBottomLeftRadius: 25,
@@ -288,7 +287,6 @@ const styles = StyleSheet.create({
     width: windowWidth,
     marginTop: hp('25%'),
     paddingLeft: wp('2%'),
-
   },
   title: {
     fontSize: wp('7%'),
@@ -297,7 +295,6 @@ const styles = StyleSheet.create({
     marginTop: hp('2%'),
     marginLeft: wp('8%')
   },
-
   product: { marginLeft: wp('8%') },
   productPhoto: {
     width: windowWidth * 0.5,
@@ -354,7 +351,6 @@ const styles = StyleSheet.create({
   part2View: {
     zIndex: 0
   }
-
 })
 
 

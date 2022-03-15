@@ -56,8 +56,6 @@ const Profile = () => {
                     </View>
                 </TouchableOpacity>
 
-
-
             </View>
             {/* back and save buttons */}
             <View style={styles.down}>
@@ -95,7 +93,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1,
-
     },
     container: {
         alignItems: 'center'
@@ -203,7 +200,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#7A78D4',
         marginLeft: windowWidth * 0.1,
     },
-
 })
 
 

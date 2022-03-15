@@ -48,12 +48,6 @@ const Introduction = () => {
         })
     }, [index])
 
-    /*
-    camelCase 
-    snake_case
-    kebap-case
-    */
-
     return (
         <View style={styles.body}>
             {/* telefonun durum çubuğunu kaldırmak için  */}
@@ -65,7 +59,6 @@ const Introduction = () => {
                     }}>
                     <Text style={styles.skip}>Skip</Text>
                 </TouchableOpacity>
-
 
                 <FlatList
                     ref={ref}
@@ -86,11 +79,8 @@ const Introduction = () => {
                                     source={item.image}
                                     style={styles.images}
                                 />
-
                             </View>
-
                         )
-
                     }}
                 />
                 <Text style={styles.text}>Beauty is{'\n'}everywhere!</Text>
@@ -133,7 +123,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-
     },
     container: {
         top: 0,
@@ -142,20 +131,16 @@ const styles = StyleSheet.create({
         height: windowHeight * 1.06,
         alignItems: 'center',
         justifyContent: 'center',
-
     },
     skip: {
         color: 'white',
         marginLeft: windowWidth * 0.80,
         marginTop: windowHeight * 0.1,
-
     },
     images: {
         width: windowWidth,
         height: windowHeight * 0.4,
         borderRadius: 20,
-
-
     },
     text: {
         fontFamily: "SyneMono",
@@ -163,16 +148,12 @@ const styles = StyleSheet.create({
         fontSize: 40,
         textAlign: 'center',
         marginTop: windowHeight * 0.03,
-
-
     },
     text2: {
-
         color: '#BBB2EA',
         fontSize: 18,
         textAlign: 'center',
         marginTop: windowHeight * 0.025
-
     },
     slider: {
         backgroundColor: '#7B6AD4',
@@ -194,7 +175,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: windowWidth * 0.015
     },
-
 })
 
 export default Introduction;

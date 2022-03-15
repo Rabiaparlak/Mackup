@@ -11,7 +11,7 @@ const DrawerContent = (props: any) => {
     const navigation: any = useNavigation();
     return (
         <View style={styles.body}>
-            <Image source={require('../assets/examples/makeup.png')} style={styles.menuImage} />
+            <Image source={require('../assets/examples/makeup.png')} resizeMode="contain" style={styles.menuImage} />
 
             <TouchableOpacity
                 onPress={() => {
@@ -81,8 +81,7 @@ const styles = StyleSheet.create({
     },
     menuImage:{
       position:'absolute',
-      width:windowWidth*0.6,
-      height:windowHeight*0.3,
+      width:windowWidth*0.55,
       left:2
     },
     sample1: {
