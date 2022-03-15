@@ -95,60 +95,62 @@ const Login = () => {
                         </>
                         :
                         <>
-                            <View style={styles.userNameView}>
-                                <AntDesign name="user" size={15} color='gray' />
-                                <Text style={{ marginLeft: 12 }}>User Name</Text>
-                                <TextInput
-                                    value={userName}
-                                    placeholder="your user name"
-                                    placeholderTextColor="#D2CDEF"
-                                    style={styles.input}
-                                    onChangeText={(text) => {
-                                        setUserName(text)
-                                    }}
-                                />
-                            </View>
-                            <View style={styles.userNameView}>
-                                <AntDesign name="user" size={15} color='gray' />
-                                <Text style={{ marginLeft: 12 }}>E-mail</Text>
-                                <TextInput
-                                    value={email}
-                                    placeholder="@..."
-                                    placeholderTextColor="#D2CDEF"
-                                    style={styles.input}
-                                    onChangeText={(text) => {
-                                        setEmail(text)
-                                    }}
-                                />
-                            </View>
-                            <View style={styles.userNameView}>
-                                <AntDesign name="user" size={15} color='gray' />
-                                <Text style={{ marginLeft: 12 }}>Password</Text>
-                                <TextInput
-                                    value={password}
-                                    placeholder="**********"
-                                    placeholderTextColor="#D2CDEF"
-                                    style={styles.input}
-                                    onChangeText={(text) => {
-                                        setPassword(text)
-                                    }}
-                                />
-                            </View>
-                            {/* Password */}
-                            <View style={styles.userNameView}>
-                                <SimpleLineIcons name="lock" size={15} color='gray' />
-                                <Text style={{ marginLeft: 12 }}>Password Again</Text>
-                                <TextInput
-                                    secureTextEntry
-                                    value={passwordAgain}
-                                    placeholder="**********"
-                                    placeholderTextColor="#D2CDEF"
-                                    style={styles.input}
-                                    onChangeText={(text) => {
-                                        setPasswordAgain(text)
-                                    }}
-                                />
-                            </View>
+                            <ScrollView showsVerticalScrollIndicator={false}>
+                                <View style={styles.userNameView}>
+                                    <AntDesign name="user" size={15} color='gray' />
+                                    <Text style={{ marginLeft: 12 }}>User Name</Text>
+                                    <TextInput
+                                        value={userName}
+                                        placeholder="your user name"
+                                        placeholderTextColor="#D2CDEF"
+                                        style={styles.input}
+                                        onChangeText={(text) => {
+                                            setUserName(text)
+                                        }}
+                                    />
+                                </View>
+                                <View style={styles.userNameView}>
+                                    <AntDesign name="user" size={15} color='gray' />
+                                    <Text style={{ marginLeft: 12 }}>E-mail</Text>
+                                    <TextInput
+                                        value={email}
+                                        placeholder="@..."
+                                        placeholderTextColor="#D2CDEF"
+                                        style={styles.input}
+                                        onChangeText={(text) => {
+                                            setEmail(text)
+                                        }}
+                                    />
+                                </View>
+                                <View style={styles.userNameView}>
+                                    <AntDesign name="user" size={15} color='gray' />
+                                    <Text style={{ marginLeft: 12 }}>Password</Text>
+                                    <TextInput
+                                        value={password}
+                                        placeholder="**********"
+                                        placeholderTextColor="#D2CDEF"
+                                        style={styles.input}
+                                        onChangeText={(text) => {
+                                            setPassword(text)
+                                        }}
+                                    />
+                                </View>
+                                {/* Password */}
+                                <View style={styles.userNameView}>
+                                    <SimpleLineIcons name="lock" size={15} color='gray' />
+                                    <Text style={{ marginLeft: 12 }}>Password Again</Text>
+                                    <TextInput
+                                        secureTextEntry
+                                        value={passwordAgain}
+                                        placeholder="**********"
+                                        placeholderTextColor="#D2CDEF"
+                                        style={styles.input}
+                                        onChangeText={(text) => {
+                                            setPasswordAgain(text)
+                                        }}
+                                    />
+                                </View>
+                            </ScrollView>
                             {/* Redirect to home page with login button */}
                             <TouchableOpacity
                                 onPress={() => {
@@ -161,6 +163,7 @@ const Login = () => {
                                 </View>
                             </TouchableOpacity>
                         </>
+
                 }
 
 

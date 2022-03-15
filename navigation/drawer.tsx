@@ -14,13 +14,22 @@ function MyDrawer(props: NavigationDrawerAction) {
             screenOptions={{
                 headerShown: false,
                 drawerStyle: {
-                    marginTop:100,
+                    marginTop: 100,
                     backgroundColor: '#312F53',
-                    borderTopRightRadius:400,
-                    borderBottomRightRadius:400,
+                    borderTopRightRadius: 400,
+                    borderBottomRightRadius: 400,
                     width: 300,
-                    height:600,
-                    opacity:0.5,
+                    height: 600,
+                    opacity: 0.5,
+                    shadowColor: "#312F53",
+                    shadowOffset: {
+                        width: 0,
+                        height: 12,
+                    },
+                    shadowOpacity: 0.58,
+                    shadowRadius: 16.00,
+
+                    elevation: 24,
                 },
             }}
         >

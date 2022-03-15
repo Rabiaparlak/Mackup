@@ -38,7 +38,7 @@ const data = [
 
 const Home = (props: any) => {
 
-  // console.log(props)
+  console.log(props)
 
 
   const navigation: any = useNavigation();
