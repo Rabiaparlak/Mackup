@@ -9,6 +9,7 @@ import Profile from '../screens/Profile';
 import Introduction from '../screens/Introduction';
 import Login from '../screens/Login';
 import Detail from '../screens/Detail';
+import DrawerContent from '../navigation/DrawerContent';
 import 'react-native-gesture-handler';
 import MyDrawer from './drawer';
 const Stack = createNativeStackNavigator();
@@ -25,6 +26,7 @@ function Navigation() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Detail" component={Detail} />
         <Stack.Screen name="MyDrawer" component={MyDrawer} />
+        <Stack.Screen name="DrawerContent" component={DrawerContent} />
         <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>

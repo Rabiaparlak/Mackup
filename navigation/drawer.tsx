@@ -8,8 +8,9 @@ const Drawer = createDrawerNavigator();
 function MyDrawer(props: NavigationDrawerAction) {
     return (
         <Drawer.Navigator
-            drawerContent={() => {
-                return <DrawerContent />
+
+            drawerContent={(props) => {
+                return <DrawerContent {...props} />
             }}
             screenOptions={{
                 headerShown: false,
@@ -34,6 +35,7 @@ function MyDrawer(props: NavigationDrawerAction) {
             }}
         >
             <Drawer.Screen {...props} name="Home" component={Home} />
+            
         </Drawer.Navigator>
     );
 }
