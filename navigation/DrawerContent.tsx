@@ -11,7 +11,6 @@ const DrawerContent = (props: any) => {
   const navigation: any = useNavigation();
   return (
     <View style={styles.body}>
-      {/* <View></View> */}
       <Image source={require('../assets/examples/makeup.png')} resizeMode="contain" style={styles.menuImage} />
 
       <TouchableOpacity
@@ -67,8 +66,8 @@ const styles = StyleSheet.create({
   body: {
     flex: 1,
     backgroundColor: '#312F53',
-    borderTopRightRadius: 400,
-    borderBottomRightRadius: 400,
+    borderTopRightRadius: windowHeight * 2,
+    borderBottomRightRadius: windowHeight * 2,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
@@ -89,8 +88,8 @@ const styles = StyleSheet.create({
     left: 2
   },
   sample1: {
-    width: windowWidth*0.17,
-    height: windowWidth*0.17,
+    width: windowWidth * 0.17,
+    height: windowWidth * 0.17,
     backgroundColor: '#2A2847',
     borderRadius: 100,
     borderWidth: 1.5,
@@ -110,8 +109,8 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   sample2: {
-    width: windowWidth*0.17,
-    height: windowWidth*0.17,
+    width: windowWidth * 0.17,
+    height: windowWidth * 0.17,
     backgroundColor: '#2A2847',
     borderRadius: 100,
     borderWidth: 1.5,
@@ -131,8 +130,8 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   sample3: {
-    width: windowWidth*0.17,
-    height: windowWidth*0.17,
+    width: windowWidth * 0.17,
+    height: windowWidth * 0.17,
     backgroundColor: '#2A2847',
     borderRadius: 100,
     borderWidth: 1.5,
@@ -152,8 +151,8 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   sample4: {
-    width: windowWidth*0.17,
-    height: windowWidth*0.17,
+    width: windowWidth * 0.17,
+    height: windowWidth * 0.17,
     backgroundColor: '#2A2847',
     borderRadius: 100,
     borderWidth: 1.5,
@@ -173,8 +172,8 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   sample5: {
-    width: windowWidth*0.17,
-    height: windowWidth*0.17,
+    width: windowWidth * 0.17,
+    height: windowWidth * 0.17,
     backgroundColor: '#2A2847',
     borderRadius: 100,
     borderWidth: 1.5,

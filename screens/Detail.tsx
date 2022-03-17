@@ -25,15 +25,15 @@ const Detail = () => {
 
   return (
     <View style={styles.body}>
-      <TouchableOpacity 
-      onPress={()=>{
-        navigation.navigate("Home")
-      }}
-      style={{zIndex:2,position:'absolute',left:windowWidth * 0.05,top:30}}>
-        <Entypo name="align-left" size={30} color={'#4C4C6D'}/>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Home")
+        }}
+        style={{ zIndex: 2, position: 'absolute', left: windowWidth * 0.05, top: 30 }}>
+        <Entypo name="align-left" size={30} color={'#4C4C6D'} />
       </TouchableOpacity>
-      <TouchableOpacity style={{zIndex:2,position:'absolute',right:windowWidth * 0.05,top:30}}>
-      <AntDesign name="shoppingcart" color={'#4C4C6D'} size={20}  />
+      <TouchableOpacity style={{ zIndex: 2, position: 'absolute', right: windowWidth * 0.05, top: 30 }}>
+        <AntDesign name="shoppingcart" color={'#4C4C6D'} size={20} />
       </TouchableOpacity>
       {/* resizeMode fotoğrafın boyutunun oranını korumasını sağlar */}
       <ImageBackground source={require('../assets/examples/kofte.png')} resizeMode="contain" style={styles.kofte}>
@@ -55,41 +55,42 @@ const Detail = () => {
           }
         </ScrollView>
       </ImageBackground>
-      {/* Detayların yazıldığı div */}
-      <View style={styles.detailViewX}>
-        <View style={styles.detailViewY}>
-          {/* akışlı görüntü sağlamak için kullanıldı */}
-          <View style={styles.detailViewZ}>
-            {/* like için buton */}
-            <TouchableOpacity
-              onPress={() => {
-                setLike(!like)
-              }}
-              style={styles.likeButton}
-            >
 
-              <MaterialCommunityIcons name={like ? "heart-multiple" : "heart-multiple-outline"} size={25} color={'white'} />
-
-            </TouchableOpacity>
-            {/* div içideki başlık , detay fiyat ekle butonu olan kısımlar */}
-            <Text style={styles.title}>Product Detail</Text>
-            <Text style={styles.productName}>Classic Style Necklace</Text>
-            <Text style={styles.productDescription}>Introducing you with the most luxury and comfortable sofa</Text>
-            <View style={styles.footer}>
-              <Text style={styles.price}>$2500</Text>
+        {/* Detayların yazıldığı div */}
+        <View style={styles.detailViewX}>
+          <View style={styles.detailViewY}>
+            {/* akışlı görüntü sağlamak için kullanıldı */}
+            <View style={styles.detailViewZ}>
+              {/* like için buton */}
+              
               <TouchableOpacity
-                onPress={() => { }}
+                onPress={() => {
+                  setLike(!like)
+                }}
+                style={styles.likeButton}
               >
-                <View style={styles.addButton}>
-                  <Text style={styles.addText}>Add to Card</Text>
-                  <MaterialIcons name="add-shopping-cart" size={20} style={styles.addIcon} />
-                </View>
+
+                <MaterialCommunityIcons name={like ? "heart-multiple" : "heart-multiple-outline"} size={25} color={'white'} />
+
               </TouchableOpacity>
+              {/* div içideki başlık , detay fiyat ekle butonu olan kısımlar */}
+              <Text style={styles.title}>Product Detail</Text>
+              <Text style={styles.productName}>Classic Style Necklace</Text>
+              <Text style={styles.productDescription}>Introducing you with the most luxury and comfortable sofa</Text>
+              <View style={styles.footer}>
+                <Text style={styles.price}>$2500</Text>
+                <TouchableOpacity
+                  onPress={() => { }}
+                >
+                  <View style={styles.addButton}>
+                    <Text style={styles.addText}>Add to Card</Text>
+                    <MaterialIcons name="add-shopping-cart" size={20} style={styles.addIcon} />
+                  </View>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </View>
-      </View>
-
     </View >
 
 
@@ -172,7 +173,7 @@ const styles = StyleSheet.create({
   productName: {
     marginTop: windowWidth * 0.05,
     fontSize: windowWidth * 0.07,
-    fontFamily:'NotoItalic',
+    fontFamily: 'NotoItalic',
     color: '#000000',
   },
   productDescription: {
@@ -181,12 +182,14 @@ const styles = StyleSheet.create({
     color: '#606060',
   },
   footer: {
+    position:'absolute',
     flexDirection: 'row',
-    marginTop: windowWidth * 0.13,
+    left:windowWidth*0.08,
+    bottom:windowHeight*0.03,
   },
   price: {
     fontSize: windowWidth * 0.065,
-    fontFamily:'NotoItalic',
+    fontFamily: 'NotoItalic',
     color: '#000000',
   },
   addButton: {

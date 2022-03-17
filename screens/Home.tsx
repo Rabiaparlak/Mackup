@@ -51,171 +51,173 @@ const Home = (props: any) => {
       <View style={styles.header}>
         <View style={styles.headerTitleArea}>
           <Text style={styles.headerTitle}>Hello Daria.</Text>
+          <View style={styles.headerIcon}>
           <TouchableOpacity
             onPress={() => {
-
               props.navigation.openDrawer();
             }}
           >
-            <Ionicons style={styles.headerIcon} name="md-menu-outline" size={40} color={"white"} />
+            <Ionicons name="md-menu-outline" size={40} color={"white"} />
           </TouchableOpacity>
+          </View>
+          <View style={styles.profileArea}>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate("Profile")
             }}
           >
-            <View style={styles.profileArea}>
-              <Image source={require('../assets/examples/pp.jpg')} style={styles.profile} />
-            </View>
+            <Image source={require('../assets/examples/pp.jpg')} style={styles.profile} />
+
           </TouchableOpacity>
+        </View>
 
-        </View>
-        <View style={styles.searchArea}>
-          <Ionicons style={styles.searchIcon} name="search-outline" size={27} color={"white"} />
-          <TextInput placeholder="What are you looking for?" placeholderTextColor="#D2CDEF" style={styles.searchText}>
-          </TextInput>
-        </View>
       </View>
-
-      {/* Container kısmı  */}
-      <View style={styles.container}>
-        {/* konum iconu */}
-        <View style={styles.localArea}>
-          <MaterialIcons name="location-on" size={20} color={"white"} />
-        </View>
-        {/* part 1 */}
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-        >
-          <View style={styles.titleArea}>
-            <Text style={styles.title}>Popular in Warsaw</Text>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate("Profile")
-              }}
-            >
-              <Text style={styles.more}>More</Text>
-            </TouchableOpacity>
-          </View>
-
-          <ScrollView
-            horizontal
-            // Bunu göstermiyoruz ekranda.
-            showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
-          >
-            {
-              data.map((item, index) => {
-                /*
-                  FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
-                  MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
-                  FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
-                */
-                return (
-                  <View
-                    key={index}
-                    style={styles.product}
-                  >
-                    <TouchableOpacity
-                      onPress={() => {
-                        navigation.navigate("Detail")
-                      }}
-                    >
-                      <Image source={item.image} style={styles.productPhoto} />
-                    </TouchableOpacity>
-
-                    <Text style={styles.productName}>{item.product_name}</Text>
-                    <Text style={styles.productDescription}>{item.desc}</Text>
-                    <View style={styles.description}>
-                      <FontAwesome name="star" size={16} color={"#75D1DD"} />
-                      <Text style={styles.starText}>{item.star}/5</Text>
-                    </View>
-                  </View>
-                )
-              })
-            }
-          </ScrollView>
-
-          {/* part2 */}
-          <View>
-            <Text style={styles.title}>Popular in Warsaw</Text>
-            <ScrollView
-              horizontal
-              // Bunu göstermiyoruz ekranda.
-              showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
-            >
-              {
-                data.map((item, index) => {
-                  /*
-                  Bu şekilde öğrendiklerini de not alarak şey yaparasan daha akılda kalıcı olabilir bebeğim.
-                    FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
-                    MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
-                    FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
-                  */
-                  return (
-                    <View
-                      key={index}
-                      style={styles.product}
-                    >
-                      <TouchableOpacity
-                        onPress={() => {
-                          navigation.navigate("Detail")
-                        }}
-                      >
-                        <Image source={item.image} style={styles.productPhoto} />
-                      </TouchableOpacity>
-                      <Text style={styles.productName}>{item.product_name}</Text>
-                      <Text style={styles.productDescription}>{item.desc}</Text>
-                      <View style={styles.description}>
-                        <FontAwesome name="star" size={16} color={"#75D1DD"} />
-                        <Text style={styles.starText}>{item.star}/5</Text>
-                      </View>
-                    </View>
-                  )
-                })
-              }
-            </ScrollView>
-          </View>
-          {/* part3 */}
-          <Text style={styles.title}>Popular in Warsaw</Text>
-          <ScrollView
-            horizontal
-            // Bunu göstermiyoruz ekranda.
-            showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
-          >
-            {
-              data.map((item, index) => {
-                /*
-                Bu şekilde öğrendiklerini de not alarak şey yaparasan daha akılda kalıcı olabilir bebeğim.
-                  FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
-                  MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
-                  FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
-                */
-                return (
-                  <View
-                    key={index}
-                    style={styles.product}
-                  >
-                    <TouchableOpacity
-                      onPress={() => {
-                        navigation.navigate("Detail")
-                      }}
-                    >
-                      <Image source={item.image} style={styles.productPhoto} />
-                    </TouchableOpacity>
-                    <Text style={styles.productName}>{item.product_name}</Text>
-                    <Text style={styles.productDescription}>{item.desc}</Text>
-                    <View style={styles.description}>
-                      <FontAwesome name="star" size={16} color={"#75D1DD"} />
-                      <Text style={styles.starText}>{item.star}/5</Text>
-                    </View>
-                  </View>
-                )
-              })
-            }
-          </ScrollView>
-        </ScrollView>
+      <View style={styles.searchArea}>
+        <Ionicons style={styles.searchIcon} name="search-outline" size={27} color={"white"} />
+        <TextInput placeholder="What are you looking for?" placeholderTextColor="#D2CDEF" style={styles.searchText}>
+        </TextInput>
       </View>
     </View>
+
+      {/* Container kısmı  */ }
+  <View style={styles.container}>
+    {/* konum iconu */}
+    <View style={styles.localArea}>
+      <MaterialIcons name="location-on" size={20} color={"white"} />
+    </View>
+    {/* part 1 */}
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+    >
+      <View style={styles.titleArea}>
+        <Text style={styles.title}>Popular in Warsaw</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Profile")
+          }}
+        >
+          <Text style={styles.more}>More</Text>
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView
+        horizontal
+        // Bunu göstermiyoruz ekranda.
+        showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
+      >
+        {
+          data.map((item, index) => {
+            /*
+              FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
+              MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
+              FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
+            */
+            return (
+              <View
+                key={index}
+                style={styles.product}
+              >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("Detail")
+                  }}
+                >
+                  <Image source={item.image} style={styles.productPhoto} />
+                </TouchableOpacity>
+
+                <Text style={styles.productName}>{item.product_name}</Text>
+                <Text style={styles.productDescription}>{item.desc}</Text>
+                <View style={styles.description}>
+                  <FontAwesome name="star" size={16} color={"#75D1DD"} />
+                  <Text style={styles.starText}>{item.star}/5</Text>
+                </View>
+              </View>
+            )
+          })
+        }
+      </ScrollView>
+
+      {/* part2 */}
+      <View>
+        <Text style={styles.title}>Popular in Warsaw</Text>
+        <ScrollView
+          horizontal
+          // Bunu göstermiyoruz ekranda.
+          showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
+        >
+          {
+            data.map((item, index) => {
+              /*
+              Bu şekilde öğrendiklerini de not alarak şey yaparasan daha akılda kalıcı olabilir bebeğim.
+                FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
+                MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
+                FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
+              */
+              return (
+                <View
+                  key={index}
+                  style={styles.product}
+                >
+                  <TouchableOpacity
+                    onPress={() => {
+                      navigation.navigate("Detail")
+                    }}
+                  >
+                    <Image source={item.image} style={styles.productPhoto} />
+                  </TouchableOpacity>
+                  <Text style={styles.productName}>{item.product_name}</Text>
+                  <Text style={styles.productDescription}>{item.desc}</Text>
+                  <View style={styles.description}>
+                    <FontAwesome name="star" size={16} color={"#75D1DD"} />
+                    <Text style={styles.starText}>{item.star}/5</Text>
+                  </View>
+                </View>
+              )
+            })
+          }
+        </ScrollView>
+      </View>
+      {/* part3 */}
+      <Text style={styles.title}>Popular in Warsaw</Text>
+      <ScrollView
+        horizontal
+        // Bunu göstermiyoruz ekranda.
+        showsHorizontalScrollIndicator={false} // bu indikatör şey yani yan tarafta aşağı mı indin yukarı mı çıktın gösteren şey var ya. O işte.
+      >
+        {
+          data.map((item, index) => {
+            /*
+            Bu şekilde öğrendiklerini de not alarak şey yaparasan daha akılda kalıcı olabilir bebeğim.
+              FILTER -> Dizinin içerisinden obje içerisindeki bir değişkene bağlı filtreleme işlemleri için kullanılır.
+              MAP -> Diziyi foreach alt yapısı kullanarak tasarıma return ettirmeyi sağlar.
+              FIND -> Dizi içerisinde bir objeye bağlı veriyi çekmek için kullanılır. (Filterelemeye benzer.)
+            */
+            return (
+              <View
+                key={index}
+                style={styles.product}
+              >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate("Detail")
+                  }}
+                >
+                  <Image source={item.image} style={styles.productPhoto} />
+                </TouchableOpacity>
+                <Text style={styles.productName}>{item.product_name}</Text>
+                <Text style={styles.productDescription}>{item.desc}</Text>
+                <View style={styles.description}>
+                  <FontAwesome name="star" size={16} color={"#75D1DD"} />
+                  <Text style={styles.starText}>{item.star}/5</Text>
+                </View>
+              </View>
+            )
+          })
+        }
+      </ScrollView>
+    </ScrollView>
+  </View>
+    </View >
   )
 }
 
@@ -253,14 +255,14 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   headerIcon: {
-    marginLeft: wp('16%')
+    right: windowWidth * -0.12,
   },
   profileArea: {
     width: wp('12%'),
     height: hp('6%'),
     backgroundColor: 'white',
     borderRadius: 19,
-    marginLeft: wp('4%')
+    right: windowWidth * -0.16,
   },
   profile: {
     width: wp('12%'),
@@ -324,7 +326,7 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   more: {
-    marginLeft: wp('25%'),
+    right: windowWidth * -0.25,
     marginTop: hp('3%'),
     color: '#7A78D4',
     fontFamily: 'sans-serif-medium'
