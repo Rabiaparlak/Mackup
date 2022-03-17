@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
-import Introduction from '../screens/Introduction';
+import Introduction from '../screens/introduction';
 import Login from '../screens/Login';
 import Detail from '../screens/Detail';
 import DrawerContent from '../navigation/DrawerContent';

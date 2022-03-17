@@ -12,6 +12,7 @@ function MyDrawer(props: NavigationDrawerAction) {
             drawerContent={(props) => {
                 return <DrawerContent {...props} />
             }}
+            
             screenOptions={{
                 headerShown: false,
                 drawerStyle: {
@@ -31,7 +32,9 @@ function MyDrawer(props: NavigationDrawerAction) {
                     shadowRadius: 16.00,
 
                     elevation: 24,
+                    
                 },
+                drawerType: "front",
             }}
         >
             <Drawer.Screen {...props} name="Home" component={Home} />
